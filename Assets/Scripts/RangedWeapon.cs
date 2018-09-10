@@ -24,8 +24,9 @@ public class RangedWeapon : MonoBehaviour {
             {
             Instantiate(projectile, shotPoint.position, transform.rotation);
                 timeBtwShots = startTimeBtwShots;
-              }
-        } else
+            }
+        }
+        else
         {
             timeBtwShots -= Time.deltaTime;
         }

@@ -9,64 +9,93 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1809588184084338}
+  m_RootGameObject: {fileID: 1914018769645542}
   m_IsPrefabAsset: 1
---- !u!1 &1809588184084338
+--- !u!1 &1495106747806340
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4171630212559902}
-  - component: {fileID: 212568737465017490}
-  - component: {fileID: 114023276824448482}
-  m_Layer: 0
-  m_Name: Projectile
+  - component: {fileID: 4610179215851514}
+  - component: {fileID: 212101094254176552}
+  m_Layer: 10
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4171630212559902
+--- !u!1 &1914018769645542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4611995351474148}
+  - component: {fileID: 114383430788430028}
+  m_Layer: 10
+  m_Name: MediumSword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4610179215851514
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1809588184084338}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.62, y: -1.94, z: 0}
+  m_GameObject: {fileID: 1495106747806340}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.009359837, y: 0.4881233, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 4611995351474148}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4611995351474148
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914018769645542}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4610179215851514}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114023276824448482
+--- !u!114 &114383430788430028
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1809588184084338}
+  m_GameObject: {fileID: 1914018769645542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbda37effa16d2b4e9db28d7d729171e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1428ea4241568e546ac6f31ad8b153f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  lifetime: 1
-  distance: 0.5
-  damage: 1
-  explosionParticle: {fileID: 1660697173412304, guid: b275e23e8e6e9cc40980f617aaac8fb9,
-    type: 2}
-  whatIsSolid:
+  startTimeBtwAttack: 0.3
+  attackPos: {fileID: 0}
+  attackPositionName: 
+  attackRangeX: 0.58
+  attackRangeY: 1.56
+  whatIsEnemy:
     serializedVersion: 2
-    m_Bits: 768
---- !u!212 &212568737465017490
+    m_Bits: 512
+  damage: 1
+--- !u!212 &212101094254176552
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1809588184084338}
+  m_GameObject: {fileID: 1495106747806340}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -93,15 +122,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300208, guid: e3a8c54ecdfc80b44a4bca43aa8ba296, type: 3}
+  m_SortingLayerID: 932419445
+  m_SortingLayer: 1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300122, guid: e3a8c54ecdfc80b44a4bca43aa8ba296, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 1}
+  m_Size: {x: 0.625, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

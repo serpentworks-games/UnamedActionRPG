@@ -5,9 +5,17 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public int health;
+    public float movementSpeed;
+    public float sightRange;
+    public float attackRange;
+    public LayerMask pLayer;
+    [Tooltip("Does this enemy patrol?")]
+    public bool isPatroller;
+    public Transform[] wayPoints;
+    public GameObject damageParticle;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -16,11 +24,22 @@ public class Enemy : MonoBehaviour {
 		if(health < 0)
         {
             Debug.Log("Enemy is dead!");
+            health = 0;
         }
 	}
 
     public void TakeDamage(int damage)
     {
         health -= damage;
+        Instantiate(damageParticle, transform.position, Quaternion.identity);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

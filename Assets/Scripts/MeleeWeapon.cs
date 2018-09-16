@@ -13,11 +13,13 @@ public class MeleeWeapon : MonoBehaviour {
 
     float timeBtwAttack;
     Animator handAnimator;
+    CamShake shake;
 
     // Use this for initialization
     void Awake () {
         handAnimator = GameObject.Find("PlayerHand").GetComponent<Animator>();
         attackPos = GameObject.Find(attackPositionName).gameObject.transform;
+        shake = FindObjectOfType<CamShake>();
 	}
 	
 	// Update is called once per frame
@@ -33,6 +35,7 @@ public class MeleeWeapon : MonoBehaviour {
                     if (enemiesToDamage[i] != null)
                     {
                         enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
+                        shake.CameraShake();
                         Debug.Log("Hitting an enemy!");
                     }
                     else

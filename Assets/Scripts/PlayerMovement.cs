@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour {
     float v;
     bool facingRight = true;
 
+    public GameObject meleeSocket;
+    public GameObject rangedSocket;
+    bool weaponSwitch;
+
     private void Awake()
     {
         pRB = GetComponent<Rigidbody2D>();
@@ -19,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       
+        weaponSwitch = true;
 	}
 	
 	// Update is called once per frame
@@ -27,6 +31,12 @@ public class PlayerMovement : MonoBehaviour {
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            weaponSwitch = !weaponSwitch;
+        }
+        meleeSocket.SetActive(weaponSwitch);
+        rangedSocket.SetActive(!weaponSwitch);
         moveInput = new Vector2(h, v);
         moveVelocity = moveInput.normalized * moveSpeed;
     }

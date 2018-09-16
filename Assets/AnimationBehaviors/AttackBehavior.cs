@@ -24,6 +24,8 @@ public class AttackBehavior : StateMachineBehaviour {
             animator.SetBool("isAttacking", false);
         }
 
+        animator.gameObject.GetComponentInChildren<Animator>().SetTrigger("isAttacking");
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

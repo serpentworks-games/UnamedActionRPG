@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
     public bool isPatroller;
     public Transform[] wayPoints;
     public GameObject damageParticle;
+    public GameObject deathParticle;
 
     // Use this for initialization
     void Start () {
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour {
         {
             Debug.Log("Enemy is dead!");
             health = 0;
+            DestroyEnemy();
         }
 	}
 
@@ -41,5 +43,11 @@ public class Enemy : MonoBehaviour {
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    void DestroyEnemy()
+    {
+        Instantiate(deathParticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

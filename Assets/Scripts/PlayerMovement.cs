@@ -33,12 +33,6 @@ public class PlayerMovement : MonoBehaviour {
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
 
-        //if (Input.GetKeyDown(KeyCode.Q))
-       // {
-       //     weaponSwitch = !weaponSwitch;
-       // }
-      //  meleeSocket.SetActive(weaponSwitch);
-      //  rangedSocket.SetActive(!weaponSwitch);
         moveInput = new Vector2(h, v);
         moveVelocity = moveInput.normalized * moveSpeed;
         

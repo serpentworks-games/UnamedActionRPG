@@ -9,8 +9,13 @@ public class RangedWeapon : MonoBehaviour {
     public GameObject projectile;
     public float startTimeBtwShots;
 
+    Inventory inv;
     float timeBtwShots;
-    
+
+    private void Awake()
+    {
+        inv = GetComponentInParent<Inventory>();
+    }
 
     private void Update()
     {
@@ -22,8 +27,11 @@ public class RangedWeapon : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(projectile, shotPoint.position, transform.rotation);
-                timeBtwShots = startTimeBtwShots;
+                if (!inv.isActive)
+                {
+                    Instantiate(projectile, shotPoint.position, transform.rotation);
+                    timeBtwShots = startTimeBtwShots;
+                }
             }
         }
         else

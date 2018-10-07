@@ -9,64 +9,73 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1809588184084338}
+  m_RootGameObject: {fileID: 1703671530631118}
   m_IsPrefabAsset: 1
---- !u!1 &1809588184084338
+--- !u!1 &1703671530631118
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4171630212559902}
-  - component: {fileID: 212568737465017490}
-  - component: {fileID: 114023276824448482}
+  - component: {fileID: 4382131734034222}
+  - component: {fileID: 212435698351653414}
+  - component: {fileID: 58598799509915416}
+  - component: {fileID: 114928541133836836}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: FirePotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4171630212559902
+--- !u!4 &4382131734034222
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1809588184084338}
+  m_GameObject: {fileID: 1703671530631118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.62, y: -1.94, z: 0}
+  m_LocalPosition: {x: -14.81649, y: -6.967575, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114023276824448482
+--- !u!58 &58598799509915416
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703671530631118}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &114928541133836836
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1809588184084338}
+  m_GameObject: {fileID: 1703671530631118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbda37effa16d2b4e9db28d7d729171e, type: 3}
+  m_Script: {fileID: 11500000, guid: 04d7e2148e3ea5141b927fc01ad3be14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  lifetime: 0.5
-  distance: 0.5
-  damage: 1
-  explosionParticle: {fileID: 1660697173412304, guid: b275e23e8e6e9cc40980f617aaac8fb9,
-    type: 2}
-  whatIsSolid:
-    serializedVersion: 2
-    m_Bits: 768
---- !u!212 &212568737465017490
+  radius: 0.5
+  itemButton: {fileID: 1759941292405866, guid: 004a242c7466dd14e89dca246284c18c, type: 2}
+--- !u!212 &212435698351653414
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1809588184084338}
+  m_GameObject: {fileID: 1703671530631118}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -93,15 +102,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1285784117
-  m_SortingLayer: 2
+  m_SortingLayerID: -1207841855
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300208, guid: e3a8c54ecdfc80b44a4bca43aa8ba296, type: 3}
+  m_Sprite: {fileID: 21300440, guid: 2de4f2f3abd46394ca9ea768a224f58b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 1}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

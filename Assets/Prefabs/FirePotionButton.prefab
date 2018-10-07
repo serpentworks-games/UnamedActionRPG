@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222556339556542128}
   - component: {fileID: 114701605839912214}
   - component: {fileID: 114438888902856732}
+  - component: {fileID: 114494887916929378}
   m_Layer: 0
   m_Name: FirePotionButton
   m_TagString: Untagged
@@ -67,9 +68,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114701605839912214}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114494887916929378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1759941292405866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf81bfa6ab778ca43b7c7ca13a6e8f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 1703671530631118, guid: 51fd64aa9e8d8cd4d895eb9152f28ba0, type: 2}
 --- !u!114 &114701605839912214
 MonoBehaviour:
   m_ObjectHideFlags: 1

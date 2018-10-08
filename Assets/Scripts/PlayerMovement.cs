@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour {
     float v;
     bool facingRight = true;
     Animator anim;
+    DialogueUI diagUI;
 
-   // public GameObject meleeSocket;
     public GameObject rangedSocket;
     bool weaponSwitch;
 
@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         pRB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        diagUI = FindObjectOfType<DialogueUI>();
     }
 
     // Use this for initialization
@@ -41,15 +42,20 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        pRB.MovePosition(pRB.position + moveVelocity * Time.fixedDeltaTime);
-        if (facingRight == false && h > 0)
+        if (!diagUI.isActive)
         {
-            FlipSprite();
+            pRB.MovePosition(pRB.position + moveVelocity * Time.fixedDeltaTime);
+            if (facingRight == false && h > 0)
+            {
+                FlipSprite();
 
-        } else if(facingRight == true && h < 0)
-        {
-            FlipSprite();
+            }
+            else if (facingRight == true && h < 0)
+            {
+                FlipSprite();
+            }
         }
+       
     }
 
     void FlipSprite()

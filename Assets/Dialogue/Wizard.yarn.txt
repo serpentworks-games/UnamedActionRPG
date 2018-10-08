@@ -1,0 +1,16 @@
+title: start
+---
+<<if visited("start") is false>>
+Hi there young one.
+I am a test Wizard.
+It is dangerous to go alone! But you are not alone.
+You got me!
+-> How does that help me?
+    It sure doesn't, but at least you know the dialogue prompt works, right?
+    ... Not that there's a dialogue prompt or anything.
+-> Um... sure.
+    I am quite sure, yes!
+<<else>>
+Please enjoy your adventure! Remember to pick up after yourself!
+<<endif>>
+===

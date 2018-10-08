@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "Hi there young one.\nI am a test NPC.\nIt is dangerous to go alone.\nBut you are not alone.\nYou have me!",
+		"position": {
+			"x": 540,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]

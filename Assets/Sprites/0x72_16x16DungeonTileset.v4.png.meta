@@ -193,10 +193,10 @@ TextureImporter:
     21300376: 0x72_16x16DungeonTileset.v4_188
     21300378: 0x72_16x16DungeonTileset.v4_189
     21300380: 0x72_16x16DungeonTileset.v4_190
-    21300382: 0x72_16x16DungeonTileset.v4_191
-    21300384: 0x72_16x16DungeonTileset.v4_192
-    21300386: 0x72_16x16DungeonTileset.v4_193
-    21300388: 0x72_16x16DungeonTileset.v4_194
+    21300382: EarthSpirit
+    21300384: WaterSpirit
+    21300386: FireSpirit
+    21300388: AirSpirit
     21300390: 0x72_16x16DungeonTileset.v4_195
     21300392: 0x72_16x16DungeonTileset.v4_196
     21300394: 0x72_16x16DungeonTileset.v4_197
@@ -209,10 +209,10 @@ TextureImporter:
     21300408: 0x72_16x16DungeonTileset.v4_204
     21300410: 0x72_16x16DungeonTileset.v4_205
     21300412: 0x72_16x16DungeonTileset.v4_206
-    21300414: 0x72_16x16DungeonTileset.v4_207
-    21300416: 0x72_16x16DungeonTileset.v4_208
-    21300418: 0x72_16x16DungeonTileset.v4_209
-    21300420: 0x72_16x16DungeonTileset.v4_210
+    21300414: EarthSprite
+    21300416: WaterSprite
+    21300418: FireSprite
+    21300420: AirSprite
     21300422: 0x72_16x16DungeonTileset.v4_211
     21300424: 0x72_16x16DungeonTileset.v4_212
     21300426: 0x72_16x16DungeonTileset.v4_213
@@ -3591,7 +3591,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_16x16DungeonTileset.v4_191
+      name: EarthSpirit
       rect:
         serializedVersion: 2
         x: 0
@@ -3611,7 +3611,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_16x16DungeonTileset.v4_192
+      name: WaterSpirit
       rect:
         serializedVersion: 2
         x: 16
@@ -3631,7 +3631,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_16x16DungeonTileset.v4_193
+      name: FireSpirit
       rect:
         serializedVersion: 2
         x: 32
@@ -3651,7 +3651,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_16x16DungeonTileset.v4_194
+      name: AirSpirit
       rect:
         serializedVersion: 2
         x: 48
@@ -3791,7 +3791,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_16x16DungeonTileset.v4_207
+      name: EarthSprite
       rect:
         serializedVersion: 2
         x: 0
@@ -3811,7 +3811,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_16x16DungeonTileset.v4_208
+      name: WaterSprite
       rect:
         serializedVersion: 2
         x: 16
@@ -3831,7 +3831,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_16x16DungeonTileset.v4_209
+      name: FireSprite
       rect:
         serializedVersion: 2
         x: 32
@@ -3851,7 +3851,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_16x16DungeonTileset.v4_210
+      name: AirSprite
       rect:
         serializedVersion: 2
         x: 48

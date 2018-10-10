@@ -12,8 +12,8 @@ public class AttackBehavior : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        attackRange = animator.GetBehaviour<EnemyStatSetupBehavior>().attackRange;
-        pLayer = animator.GetBehaviour<EnemyStatSetupBehavior>().pLayer;
+        attackRange = animator.GetComponent<Enemy>().attackRange;
+        pLayer = animator.GetComponent<Enemy>().pLayer;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

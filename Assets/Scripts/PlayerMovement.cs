@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     Animator anim;
     DialogueUI diagUI;
 
+    public GameObject meleeSocket;
     public GameObject rangedSocket;
     bool weaponSwitch;
 

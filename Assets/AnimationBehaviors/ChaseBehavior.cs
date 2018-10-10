@@ -13,10 +13,10 @@ public class ChaseBehavior : StateMachineBehaviour {
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        sightRange = animator.GetBehaviour<EnemyStatSetupBehavior>().sightRange;
-        speed = animator.GetBehaviour<EnemyStatSetupBehavior>().movementSpeed;
-        attackRange = animator.GetBehaviour<EnemyStatSetupBehavior>().attackRange;
-        pLayer = animator.GetBehaviour<EnemyStatSetupBehavior>().pLayer;
+        sightRange = animator.GetComponent<Enemy>().sightRange;
+        speed = animator.GetComponent<Enemy>().movementSpeed;
+        attackRange = animator.GetComponent<Enemy>().attackRange;
+        pLayer = animator.GetComponent<Enemy>().pLayer;
     }
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

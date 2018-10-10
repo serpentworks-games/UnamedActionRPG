@@ -14,12 +14,17 @@ public class MeleeWeapon : MonoBehaviour {
     float timeBtwAttack;
     Animator handAnimator;
     CamShake shake;
+    Collider2D[] colliders;
+    Inventory inv;
+    DialogueUI diagUI;
 
     // Use this for initialization
     void Awake () {
         handAnimator = GameObject.Find("PlayerHand").GetComponent<Animator>();
         attackPos = GameObject.Find(attackPositionName).gameObject.transform;
         shake = FindObjectOfType<CamShake>();
+        inv = FindObjectOfType<Inventory>();
+        diagUI = FindObjectOfType<DialogueUI>();
 	}
 	
 	// Update is called once per frame
@@ -28,24 +33,28 @@ public class MeleeWeapon : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
-                handAnimator.SetTrigger("mediumSwordSwing");
-                Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), whatIsEnemy);
-                for (int i = 0; i < enemiesToDamage.Length; i++)
+                if (!inv.isActive && !diagUI.isActive)
                 {
-                    if (enemiesToDamage[i] != null)
-                    {
-                        enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
-                        shake.CameraShake();
-                        Debug.Log("Hitting an enemy!");
-                    }
-                    else
-                    {
-                        Debug.Log("No enemy to hit!");
-                    }
-                   
-                }
 
-                timeBtwAttack = startTimeBtwAttack;
+                    handAnimator.SetTrigger("mediumSwordSwing");
+                    colliders = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), whatIsEnemy);
+                    for (int i = 0; i < colliders.Length; i++)
+                    {
+                        if (colliders[i].CompareTag("Enemy"))
+                        {
+                            colliders[i].GetComponent<Enemy>().TakeDamage(damage);
+                            shake.CameraShake();
+                            Debug.Log("Hitting an enemy!");
+                        }
+                        else
+                        {
+                            Debug.Log("No enemy to hit!");
+                        }
+
+                    }
+
+                    timeBtwAttack = startTimeBtwAttack; 
+                }
             }            
         }
         else

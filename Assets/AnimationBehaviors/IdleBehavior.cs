@@ -6,20 +6,30 @@ public class IdleBehavior : StateMachineBehaviour {
 
     float sightRange;
     LayerMask pLayer;
+    bool isPatroller;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        sightRange = animator.GetBehaviour<EnemyStatSetupBehavior>().sightRange;
-        pLayer = animator.GetBehaviour<EnemyStatSetupBehavior>().pLayer;
+        sightRange = animator.GetComponent<Enemy>().sightRange;
+        pLayer = animator.GetComponent<Enemy>().pLayer;
+        
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        isPatroller = animator.GetComponent<Enemy>().isPatroller;
+
+        if (isPatroller)
+        {
+            return;
+        }
+
         Collider2D collider = Physics2D.OverlapCircle(animator.transform.position, sightRange, pLayer);
-            if(collider != null)
-            {
-                 animator.SetBool("isFollowing", true);
-            }     
+        if(collider != null)
+        {
+            animator.SetBool("isFollowing", true);
+            animator.gameObject.GetComponentInChildren<Animator>().SetBool("isMoving", true);
+        }     
 	}
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state

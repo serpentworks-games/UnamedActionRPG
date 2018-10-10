@@ -9,30 +9,44 @@ public class PatrolBehavior : StateMachineBehaviour {
     int nextWayPoint;
     float waitTime;
     float movementSpeed;
+    float sightRange;
+    LayerMask pLayer;
     Transform[] wayPoints;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         waitTime = startWaitTime;
-        movementSpeed = animator.GetBehaviour<EnemyStatSetupBehavior>().movementSpeed;
-        wayPoints = animator.GetBehaviour<EnemyStatSetupBehavior>().wayPoints;
+        movementSpeed = animator.GetComponent<Enemy>().movementSpeed;
+        sightRange = animator.GetComponent<Enemy>().sightRange;
+        pLayer = animator.GetComponent<Enemy>().pLayer;
+        wayPoints = animator.GetComponent<Enemy>().wayPoints;
 	}
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, wayPoints[nextWayPoint].position, movementSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(animator.transform.position, wayPoints[nextWayPoint].position) < 0.2f)
+        Collider2D chaseCol = Physics2D.OverlapCircle(animator.transform.position, sightRange, pLayer);
+        if (chaseCol != null)
         {
-            if(waitTime <= 0)
+            animator.SetBool("isFollowing", true);
+        }
+        else
+        {
+            if (Vector2.Distance(animator.transform.position, wayPoints[nextWayPoint].position) < 0.2f)
             {
-                nextWayPoint = (nextWayPoint + 1) % wayPoints.Length;
-                waitTime = startWaitTime;
+                if (waitTime <= 0)
+                {
+                    nextWayPoint = (nextWayPoint + 1) % wayPoints.Length;
+                    waitTime = startWaitTime;
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                    animator.SetTrigger("waitAtPoint");
+                    animator.gameObject.GetComponentInChildren<Animator>().SetBool("isMoving", false);
+                }
             }
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }
-        }    
+        }
 	}
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state

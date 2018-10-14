@@ -14,21 +14,12 @@ public class PlayerMovement : MonoBehaviour {
     Animator anim;
     DialogueUI diagUI;
 
-    public GameObject meleeSocket;
-    public GameObject rangedSocket;
-    bool weaponSwitch;
-
     private void Awake()
     {
         pRB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         diagUI = FindObjectOfType<DialogueUI>();
     }
-
-    // Use this for initialization
-    void Start () {
-        //weaponSwitch = true;
-	}
 	
 	// Update is called once per frame
 	void Update () {

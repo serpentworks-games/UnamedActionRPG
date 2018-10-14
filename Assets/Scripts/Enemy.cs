@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour {
     public LayerMask pLayer;
     [Tooltip("Does this enemy patrol?")]
     public bool isPatroller;
+    public GameObject enemySprite;
     public Transform[] wayPoints;
     public GameObject damageParticle;
     public GameObject deathParticle;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IdleBehavior : StateMachineBehaviour {
 
+    GameObject enemySprite;
     float sightRange;
     LayerMask pLayer;
     bool isPatroller;
@@ -12,6 +13,7 @@ public class IdleBehavior : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         sightRange = animator.GetComponent<Enemy>().sightRange;
         pLayer = animator.GetComponent<Enemy>().pLayer;
+        enemySprite = animator.GetComponent<Enemy>().enemySprite;
         
     }
 
@@ -19,7 +21,7 @@ public class IdleBehavior : StateMachineBehaviour {
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         isPatroller = animator.GetComponent<Enemy>().isPatroller;
 
-        if (isPatroller)
+        if (!isPatroller)
         {
             return;
         }
@@ -28,7 +30,7 @@ public class IdleBehavior : StateMachineBehaviour {
         if(collider != null)
         {
             animator.SetBool("isFollowing", true);
-            animator.gameObject.GetComponentInChildren<Animator>().SetBool("isMoving", true);
+            enemySprite.GetComponent<Animator>().SetBool("isMoving", true);
         }     
 	}
 

@@ -10,6 +10,7 @@ public class PatrolBehavior : StateMachineBehaviour {
     float waitTime;
     float movementSpeed;
     float sightRange;
+    GameObject enemySprite;
     LayerMask pLayer;
     Transform[] wayPoints;
 
@@ -17,11 +18,14 @@ public class PatrolBehavior : StateMachineBehaviour {
         waitTime = startWaitTime;
         movementSpeed = animator.GetComponent<Enemy>().movementSpeed;
         sightRange = animator.GetComponent<Enemy>().sightRange;
+        enemySprite = animator.GetComponent<Enemy>().enemySprite;
         pLayer = animator.GetComponent<Enemy>().pLayer;
         wayPoints = animator.GetComponent<Enemy>().wayPoints;
 	}
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+
+        enemySprite.GetComponent<Animator>().SetBool("isMoving", true);
 
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, wayPoints[nextWayPoint].position, movementSpeed * Time.deltaTime);
 
@@ -42,8 +46,7 @@ public class PatrolBehavior : StateMachineBehaviour {
                 else
                 {
                     waitTime -= Time.deltaTime;
-                    animator.SetTrigger("waitAtPoint");
-                    animator.gameObject.GetComponentInChildren<Animator>().SetBool("isMoving", false);
+                    enemySprite.GetComponent<Animator>().SetBool("isMoving", false);
                 }
             }
         }

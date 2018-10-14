@@ -11,6 +11,21 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1914018769645542}
   m_IsPrefabAsset: 1
+--- !u!1 &1193337627046400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4751114694797376}
+  m_Layer: 10
+  m_Name: DamageARea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1495106747806340
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,7 +50,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4611995351474148}
-  - component: {fileID: 114383430788430028}
   m_Layer: 10
   m_Name: MediumSword
   m_TagString: Untagged
@@ -67,29 +81,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4610179215851514}
+  - {fileID: 4751114694797376}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114383430788430028
-MonoBehaviour:
+--- !u!4 &4751114694797376
+Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1914018769645542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1428ea4241568e546ac6f31ad8b153f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTimeBtwAttack: 0.3
-  attackPos: {fileID: 0}
-  attackPositionName: 
-  attackRangeX: 0.58
-  attackRangeY: 1.56
-  whatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 512
-  damage: 1
+  m_GameObject: {fileID: 1193337627046400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.008, y: 0.767, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4611995351474148}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &212101094254176552
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -123,7 +131,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 932419445
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300122, guid: e3a8c54ecdfc80b44a4bca43aa8ba296, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

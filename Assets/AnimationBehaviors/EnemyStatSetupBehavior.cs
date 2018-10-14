@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 //This script simply transfers values from the Enemy script into the state machine for reference
 //To avoid having to dive into the animator to set values
@@ -11,6 +9,7 @@ public class EnemyStatSetupBehavior : StateMachineBehaviour {
     public float sightRange;
     public float attackRange;
     public bool isPatroller;
+    public GameObject enemySprite;
     public Transform[] wayPoints;
     public LayerMask pLayer;
 
@@ -24,6 +23,7 @@ public class EnemyStatSetupBehavior : StateMachineBehaviour {
         sightRange = enemyStats.sightRange;
         attackRange = enemyStats.attackRange;
         isPatroller = enemyStats.isPatroller;
+        enemySprite = enemyStats.enemySprite;
         wayPoints = enemyStats.wayPoints;
         pLayer = enemyStats.pLayer;
 

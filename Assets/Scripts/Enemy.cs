@@ -2,40 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : Character {
 
-    public int health;
-    public float movementSpeed;
+
     public float sightRange;
     public float attackRange;
     public LayerMask pLayer;
-    [Tooltip("Does this enemy patrol?")]
     public bool isPatroller;
     public GameObject enemySprite;
     public Transform[] wayPoints;
-    public GameObject damageParticle;
-    public GameObject deathParticle;
 
     // Use this for initialization
-    void Start () {
-		
+    protected override void Start () {
+        base.Start();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if(health < 0)
-        {
-            Debug.Log("Enemy is dead!");
-            health = 0;
-            DestroyEnemy();
-        }
+	protected override void Update () {
+        base.Update();
 	}
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        Instantiate(damageParticle, transform.position, Quaternion.identity);
-    }
 
     private void OnDrawGizmosSelected()
     {
@@ -46,9 +31,10 @@ public class Enemy : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
-    void DestroyEnemy()
+    public override void TakeDamage(int damage)
     {
-        Instantiate(deathParticle, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        base.TakeDamage(damage);
     }
+
+
 }

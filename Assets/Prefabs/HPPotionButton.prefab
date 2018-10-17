@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114438888902856732}
   - component: {fileID: 114494887916929378}
   m_Layer: 0
-  m_Name: FirePotionButton
+  m_Name: HPPotionButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,23 +8,27 @@ public class AttackBehavior : StateMachineBehaviour {
     float attackRange;
     public float distanceBetween;
     LayerMask pLayer;
+    Collider2D col;
+    GameObject enemySprite;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         attackRange = animator.GetComponent<Enemy>().attackRange;
         pLayer = animator.GetComponent<Enemy>().pLayer;
+        enemySprite = animator.GetComponent<Enemy>().enemySprite;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Collider2D atkCol = Physics2D.OverlapCircle(animator.transform.position, attackRange, pLayer);
-        if (atkCol == null)
+        col = Physics2D.OverlapCircle(animator.transform.position, attackRange, pLayer);
+        if (col == null)
         {
             animator.SetBool("isAttacking", false);
+            return;
         }
 
-        animator.gameObject.GetComponentInChildren<Animator>().SetTrigger("isAttacking");
+        enemySprite.GetComponent<Animator>().SetTrigger("isAttacking");
 
     }
 

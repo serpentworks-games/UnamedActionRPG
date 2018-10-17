@@ -14,7 +14,7 @@ public class ChaseBehavior : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         sightRange = animator.GetComponent<Enemy>().sightRange;
-        speed = animator.GetComponent<Enemy>().movementSpeed;
+        speed = animator.GetComponent<Enemy>().moveSpeed;
         attackRange = animator.GetComponent<Enemy>().attackRange;
         pLayer = animator.GetComponent<Enemy>().pLayer;
     }

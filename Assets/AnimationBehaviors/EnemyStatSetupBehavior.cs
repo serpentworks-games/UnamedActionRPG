@@ -19,7 +19,7 @@ public class EnemyStatSetupBehavior : StateMachineBehaviour {
 
         enemyStats = animator.GetComponent<Enemy>();
 
-        movementSpeed = enemyStats.movementSpeed;
+        movementSpeed = enemyStats.moveSpeed;
         sightRange = enemyStats.sightRange;
         attackRange = enemyStats.attackRange;
         isPatroller = enemyStats.isPatroller;

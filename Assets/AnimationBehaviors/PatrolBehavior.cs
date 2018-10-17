@@ -16,7 +16,7 @@ public class PatrolBehavior : StateMachineBehaviour {
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         waitTime = startWaitTime;
-        movementSpeed = animator.GetComponent<Enemy>().movementSpeed;
+        movementSpeed = animator.GetComponent<Enemy>().moveSpeed;
         sightRange = animator.GetComponent<Enemy>().sightRange;
         enemySprite = animator.GetComponent<Enemy>().enemySprite;
         pLayer = animator.GetComponent<Enemy>().pLayer;

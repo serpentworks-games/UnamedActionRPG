@@ -21,9 +21,10 @@ public class GameManager : MonoBehaviour {
         if (inv.isActive)
         {
             Cursor.visible = true;
-        } else
+        }
+        else if (!inv.isActive)
         {
-           // Cursor.visible = false;
+            Cursor.visible = false;
         }
 	}
 }
